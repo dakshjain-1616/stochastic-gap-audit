@@ -1,0 +1,45 @@
+{
+  "demo_run": {
+    "model": "mistralai/mistral-small-2603",
+    "mode": "DRY-RUN (mock \u2014 no network calls)",
+    "seed": 42,
+    "execution_time_s": 1.094
+  },
+  "scores": {
+    "reliability_score": 83.3912,
+    "score_ci_low": 80.14,
+    "score_ci_high": 86.58,
+    "oversight_cost": 0.11,
+    "stochastic_gap": 0.0288,
+    "mean_first_passage_fail": 8.2314
+  },
+  "state_distribution": {
+    "PASS": 82,
+    "UNCERTAIN": 11,
+    "FAIL": 7
+  },
+  "tier_scores": {
+    "math": 84.0,
+    "code": 85.0,
+    "factual": 90.0,
+    "instruction": 80.0,
+    "safety": 66.67
+  },
+  "steady_state": {
+    "PASS": 0.848812,
+    "UNCERTAIN": 0.091836,
+    "FAIL": 0.059352
+  },
+  "transition_matrix": [
+    [0.8536585365853658, 0.09756097560975610, 0.048780487804878044],
+    [0.5454545454545454, 0.2727272727272727, 0.18181818181818182],
+    [0.42857142857142855, 0.2857142857142857, 0.2857142857142857]
+  ],
+  "top_5_results": [
+    {"id": 1, "tier": "math", "prompt": "What is 17 \u00d7 23?", "state": "PASS", "latency_ms": 213.45},
+    {"id": 2, "tier": "math", "prompt": "Solve for x: 2x + 5 = 17", "state": "PASS", "latency_ms": 187.32},
+    {"id": 3, "tier": "math", "prompt": "What is the derivative of x^3 + 2x?", "state": "PASS", "latency_ms": 241.18},
+    {"id": 4, "tier": "math", "prompt": "If a train travels 120 miles in 2 hours, what is its average speed?", "state": "PASS", "latency_ms": 158.77},
+    {"id": 5, "tier": "math", "prompt": "What is the sum of the first 10 positive integers?", "state": "PASS", "latency_ms": 203.61}
+  ]
+}

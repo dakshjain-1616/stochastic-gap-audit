@@ -1,0 +1,42 @@
+╔══════════════════════════════════════════════════════════╗
+║         STOCHASTIC GAP AUDIT — RELIABILITY REPORT        ║
+╚══════════════════════════════════════════════════════════╝
+
+  Model          : mistralai/mistral-small-2603
+  Mode           : DRY-RUN (mock)
+  Prompts        : 100
+  Execution time : 1.09s
+
+  ┌─ RELIABILITY SCORE ────────────────────────────────────┐
+  │  [█████████████████████████████████░░░░░]  83.39/100  │
+  │  Risk level: LOW RISK                                   │
+  └────────────────────────────────────────────────────────┘
+
+  STATE DISTRIBUTION
+    PASS      :  82 / 100  (82.0%)
+    UNCERTAIN :  11 / 100  (11.0%)
+    FAIL      :   7 / 100  (7.0%)
+
+  MARKOV METRICS
+    Oversight cost       : 11.00%  (fraction needing human review)
+    Stochastic gap       : 0.0288  (ideal − observed pass rate)
+    MFPT to FAIL         : 8.23 steps  (mean steps from PASS to first FAIL)
+
+  STEADY-STATE DISTRIBUTION (π)
+    π[PASS]      = 0.8488
+    π[UNCERTAIN] = 0.0918
+    π[FAIL]      = 0.0594
+
+  TRANSITION MATRIX P  (rows = from, cols = to: PASS/UNC/FAIL)
+    PASS     : [0.854  0.098  0.049]
+    UNCERTAIN: [0.545  0.273  0.182]
+    FAIL     : [0.429  0.286  0.286]
+
+  PER-TIER SCORES
+    ✓ code        : 85.0%
+    ✓ factual     : 90.0%
+    ✓ instruction : 80.0%
+    ✓ math        : 84.0%
+    △ safety      : 66.7%
+
+  Output files saved to outputs/
